@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Авторизация" id="32">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Авторизация</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Авторизация</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<HorizontalAlign>Center</HorizontalAlign>
+			<VerticalAlign>Center</VerticalAlign>
+			<ExtendedTooltip name="АвторизацияРасширеннаяПодсказка" id="33"/>
+			<ChildItems>
+				<Pages name="АвторизацияОсновная" id="57">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Авторизация основная</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Авторизация основная</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="АвторизацияОсновнаяРасширеннаяПодсказка" id="58"/>
+					<ChildItems>
+						<Page name="АвторизацияСтраница" id="59">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Вход</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Авторизация страница</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="АвторизацияСтраницаРасширеннаяПодсказка" id="60"/>
+							<ChildItems>
+								<UsualGroup name="Группа1" id="42">
+									<Group>Vertical</Group>
+									<HorizontalAlign>Left</HorizontalAlign>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="43"/>
+									<ChildItems>
+										<InputField name="ТипАутентификации" id="65">
+											<DataPath>Объект.ТипАутентификации</DataPath>
+											<TitleLocation>Top</TitleLocation>
+											<ListChoiceMode>true</ListChoiceMode>
+											<ChooseType>false</ChooseType>
+											<ChoiceList>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>По ключу API</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:string">apiKey</Value>
+													</xr:Value>
+												</xr:Item>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>По логину</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:string">none</Value>
+													</xr:Value>
+												</xr:Item>
+											</ChoiceList>
+											<ContextMenu name="ТипАутентификацииКонтекстноеМеню" id="66"/>
+											<ExtendedTooltip name="ТипАутентификацииРасширеннаяПодсказка" id="67"/>
+											<Events>
+												<Event name="OnChange">ТипАутентификацииПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="Пользователь" id="34">
+											<DataPath>Объект.Пользователь</DataPath>
+											<TitleLocation>Top</TitleLocation>
+											<ContextMenu name="ПользовательКонтекстноеМеню" id="35"/>
+											<ExtendedTooltip name="ПользовательРасширеннаяПодсказка" id="36"/>
+										</InputField>
+										<InputField name="Пароль" id="37">
+											<DataPath>Объект.Пароль</DataPath>
+											<TitleLocation>Top</TitleLocation>
+											<ContextMenu name="ПарольКонтекстноеМеню" id="38"/>
+											<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="39"/>
+										</InputField>
+										<InputField name="КлючAPI" id="68">
+											<DataPath>Объект.КлючAPI</DataPath>
+											<Visible>false</Visible>
+											<TitleLocation>Top</TitleLocation>
+											<ContextMenu name="КлючAPIКонтекстноеМеню" id="69"/>
+											<ExtendedTooltip name="КлючAPIРасширеннаяПодсказка" id="70"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<Button name="Вход" id="40">
+									<Type>UsualButton</Type>
+									<DefaultButton>true</DefaultButton>
+									<Width>15</Width>
+									<Height>2</Height>
+									<CommandName>Form.Command.Вход</CommandName>
+									<ExtendedTooltip name="ВходРасширеннаяПодсказка" id="41"/>
+								</Button>
+							</ChildItems>
+						</Page>
+						<Page name="АвторизацияНастройки" id="61">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Авторизация настройки</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Авторизация настройки</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="АвторизацияНастройкиРасширеннаяПодсказка" id="62"/>
+							<ChildItems>
+								<InputField name="БазовыйURL" id="46">
+									<DataPath>Объект.БазовыйURL</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+									<ContextMenu name="БазовыйURLКонтекстноеМеню" id="47"/>
+									<ExtendedTooltip name="БазовыйURLРасширеннаяПодсказка" id="48"/>
+								</InputField>
+								<InputField name="Порт" id="49">
+									<DataPath>Объект.Порт</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="ПортКонтекстноеМеню" id="50"/>
+									<ExtendedTooltip name="ПортРасширеннаяПодсказка" id="51"/>
+								</InputField>
+								<CheckBoxField name="ИспользоватьSSL" id="52">
+									<DataPath>Объект.ИспользоватьSSL</DataPath>
+									<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ИспользоватьSSLКонтекстноеМеню" id="53"/>
+									<ExtendedTooltip name="ИспользоватьSSLРасширеннаяПодсказка" id="54"/>
+								</CheckBoxField>
+								<Button name="СохранитьПараметрыАвторизации" id="63">
+									<Type>UsualButton</Type>
+									<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+									<CommandName>Form.Command.СохранитьПараметрыАвторизации</CommandName>
+									<ExtendedTooltip name="СохранитьПараметрыАвторизацииРасширеннаяПодсказка" id="64"/>
+								</Button>
+							</ChildItems>
+						</Page>
+					</ChildItems>
+				</Pages>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Настройки" id="44">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="НастройкиРасширеннаяПодсказка" id="45"/>
+			<ChildItems>
+				<Table name="НастройкиWhatsApp" id="71">
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>Объект.НастройкиWhatsApp</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="НастройкиWhatsAppКонтекстноеМеню" id="72"/>
+					<AutoCommandBar name="НастройкиWhatsAppКоманднаяПанель" id="73">
+						<ChildItems>
+							<Button name="НастройкиWhatsAppПримеры" id="136">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.Примеры</CommandName>
+								<ExtendedTooltip name="НастройкиWhatsAppПримерыРасширеннаяПодсказка" id="137"/>
+							</Button>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="НастройкиWhatsAppРасширеннаяПодсказка" id="74"/>
+					<SearchStringAddition name="НастройкиWhatsAppСтрокаПоиска" id="75">
+						<AdditionSource>
+							<Item>НастройкиWhatsApp</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="НастройкиWhatsAppСтрокаПоискаКонтекстноеМеню" id="76"/>
+						<ExtendedTooltip name="НастройкиWhatsAppСтрокаПоискаРасширеннаяПодсказка" id="77"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="НастройкиWhatsAppСостояниеПросмотра" id="78">
+						<AdditionSource>
+							<Item>НастройкиWhatsApp</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="НастройкиWhatsAppСостояниеПросмотраКонтекстноеМеню" id="79"/>
+						<ExtendedTooltip name="НастройкиWhatsAppСостояниеПросмотраРасширеннаяПодсказка" id="80"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="НастройкиWhatsAppУправлениеПоиском" id="81">
+						<AdditionSource>
+							<Item>НастройкиWhatsApp</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="НастройкиWhatsAppУправлениеПоискомКонтекстноеМеню" id="82"/>
+						<ExtendedTooltip name="НастройкиWhatsAppУправлениеПоискомРасширеннаяПодсказка" id="83"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="1282f000-23b6-4887-87f4-9e8e79db3d32">НастройкиWhatsAppВыбор</Event>
+						<Event name="2391e7b8-7235-45d7-ab7e-6ff3dc086396">НастройкиWhatsAppПередНачаломДобавления</Event>
+						<Event name="2ccfdec5-583d-4eca-8319-e55de492665a">НастройкиWhatsAppПередУдалением</Event>
+					</Events>
+					<ChildItems>
+						<LabelField name="НастройкиWhatsAppНомерСтроки" id="84">
+							<DataPath>Объект.НастройкиWhatsApp.LineNumber</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НастройкиWhatsAppНомерСтрокиКонтекстноеМеню" id="85"/>
+							<ExtendedTooltip name="НастройкиWhatsAppНомерСтрокиРасширеннаяПодсказка" id="86"/>
+						</LabelField>
+						<ColumnGroup name="НастройкиWhatsAppГруппа1" id="126">
+							<ReadOnly>true</ReadOnly>
+							<ExtendedTooltip name="НастройкиWhatsAppГруппа1РасширеннаяПодсказка" id="127"/>
+							<ChildItems>
+								<InputField name="НастройкиWhatsAppИдентификатор" id="87">
+									<DataPath>Объект.НастройкиWhatsApp.Идентификатор</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НастройкиWhatsAppИдентификаторКонтекстноеМеню" id="88"/>
+									<ExtendedTooltip name="НастройкиWhatsAppИдентификаторРасширеннаяПодсказка" id="89"/>
+								</InputField>
+								<InputField name="НастройкиWhatsAppИдПользователя" id="96">
+									<DataPath>Объект.НастройкиWhatsApp.ИдПользователя</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НастройкиWhatsAppИдПользователяКонтекстноеМеню" id="97"/>
+									<ExtendedTooltip name="НастройкиWhatsAppИдПользователяРасширеннаяПодсказка" id="98"/>
+								</InputField>
+							</ChildItems>
+						</ColumnGroup>
+						<ColumnGroup name="НастройкиWhatsAppГруппа2" id="128">
+							<ReadOnly>true</ReadOnly>
+							<ExtendedTooltip name="НастройкиWhatsAppГруппа2РасширеннаяПодсказка" id="129"/>
+							<ChildItems>
+								<InputField name="НастройкиWhatsAppНаименование" id="90">
+									<DataPath>Объект.НастройкиWhatsApp.Наименование</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НастройкиWhatsAppНаименованиеКонтекстноеМеню" id="91"/>
+									<ExtendedTooltip name="НастройкиWhatsAppНаименованиеРасширеннаяПодсказка" id="92"/>
+								</InputField>
+								<InputField name="НастройкиWhatsAppОписание" id="93">
+									<DataPath>Объект.НастройкиWhatsApp.Описание</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<MultiLine>true</MultiLine>
+									<ContextMenu name="НастройкиWhatsAppОписаниеКонтекстноеМеню" id="94"/>
+									<ExtendedTooltip name="НастройкиWhatsAppОписаниеРасширеннаяПодсказка" id="95"/>
+								</InputField>
+								<InputField name="НастройкиWhatsAppQRКод" id="102">
+									<DataPath>Объект.НастройкиWhatsApp.QRКод</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НастройкиWhatsAppQRКодКонтекстноеМеню" id="103"/>
+									<ExtendedTooltip name="НастройкиWhatsAppQRКодРасширеннаяПодсказка" id="104"/>
+								</InputField>
+							</ChildItems>
+						</ColumnGroup>
+						<ColumnGroup name="НастройкиWhatsAppГруппа3" id="130">
+							<ReadOnly>true</ReadOnly>
+							<ExtendedTooltip name="НастройкиWhatsAppГруппа3РасширеннаяПодсказка" id="131"/>
+							<ChildItems>
+								<InputField name="НастройкиWhatsAppСтатус" id="99">
+									<DataPath>Объект.НастройкиWhatsApp.Статус</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НастройкиWhatsAppСтатусКонтекстноеМеню" id="100"/>
+									<ExtendedTooltip name="НастройкиWhatsAppСтатусРасширеннаяПодсказка" id="101"/>
+								</InputField>
+								<InputField name="НастройкиWhatsAppАдресВебхука" id="105">
+									<DataPath>Объект.НастройкиWhatsApp.АдресВебхука</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НастройкиWhatsAppАдресВебхукаКонтекстноеМеню" id="106"/>
+									<ExtendedTooltip name="НастройкиWhatsAppАдресВебхукаРасширеннаяПодсказка" id="107"/>
+								</InputField>
+								<CheckBoxField name="НастройкиWhatsAppВебхукВключен" id="108">
+									<DataPath>Объект.НастройкиWhatsApp.ВебхукВключен</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="НастройкиWhatsAppВебхукВключенКонтекстноеМеню" id="109"/>
+									<ExtendedTooltip name="НастройкиWhatsAppВебхукВключенРасширеннаяПодсказка" id="110"/>
+								</CheckBoxField>
+							</ChildItems>
+						</ColumnGroup>
+						<ColumnGroup name="НастройкиWhatsAppГруппа4" id="132">
+							<ReadOnly>true</ReadOnly>
+							<ExtendedTooltip name="НастройкиWhatsAppГруппа4РасширеннаяПодсказка" id="133"/>
+							<ChildItems>
+								<InputField name="НастройкиWhatsAppОтправленоСообщений" id="111">
+									<DataPath>Объект.НастройкиWhatsApp.ОтправленоСообщений</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НастройкиWhatsAppОтправленоСообщенийКонтекстноеМеню" id="112"/>
+									<ExtendedTooltip name="НастройкиWhatsAppОтправленоСообщенийРасширеннаяПодсказка" id="113"/>
+								</InputField>
+								<InputField name="НастройкиWhatsAppПолученоСообщений" id="114">
+									<DataPath>Объект.НастройкиWhatsApp.ПолученоСообщений</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НастройкиWhatsAppПолученоСообщенийКонтекстноеМеню" id="115"/>
+									<ExtendedTooltip name="НастройкиWhatsAppПолученоСообщенийРасширеннаяПодсказка" id="116"/>
+								</InputField>
+							</ChildItems>
+						</ColumnGroup>
+						<ColumnGroup name="НастройкиWhatsAppГруппа5" id="134">
+							<ReadOnly>true</ReadOnly>
+							<ExtendedTooltip name="НастройкиWhatsAppГруппа5РасширеннаяПодсказка" id="135"/>
+							<ChildItems>
+								<InputField name="НастройкиWhatsAppДатаПоследнейАктивности" id="117">
+									<DataPath>Объект.НастройкиWhatsApp.ДатаПоследнейАктивности</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НастройкиWhatsAppДатаПоследнейАктивностиКонтекстноеМеню" id="118"/>
+									<ExtendedTooltip name="НастройкиWhatsAppДатаПоследнейАктивностиРасширеннаяПодсказка" id="119"/>
+								</InputField>
+								<InputField name="НастройкиWhatsAppДатаСоздания" id="120">
+									<DataPath>Объект.НастройкиWhatsApp.ДатаСоздания</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НастройкиWhatsAppДатаСозданияКонтекстноеМеню" id="121"/>
+									<ExtendedTooltip name="НастройкиWhatsAppДатаСозданияРасширеннаяПодсказка" id="122"/>
+								</InputField>
+								<InputField name="НастройкиWhatsAppДатаОбновления" id="123">
+									<DataPath>Объект.НастройкиWhatsApp.ДатаОбновления</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НастройкиWhatsAppДатаОбновленияКонтекстноеМеню" id="124"/>
+									<ExtendedTooltip name="НастройкиWhatsAppДатаОбновленияРасширеннаяПодсказка" id="125"/>
+								</InputField>
+							</ChildItems>
+						</ColumnGroup>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.RKWA_ExetrnalProccessor</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Вход" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вход</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вход</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.AppearanceCheckIcon</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Вход</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="СохранитьПараметрыАвторизации" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить параметры авторизации</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SaveFile</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СохранитьПараметрыАвторизации</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="Примеры" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Примеры</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Примеры</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Примеры</Action>
+		</Command>
+	</Commands>
+</Form>

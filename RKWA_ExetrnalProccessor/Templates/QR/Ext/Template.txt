@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WhatsApp QR-код</title>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        #main-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #qrcode-container {
+            width: 90%;
+            height: 90%;
+            max-width: 500px;
+            max-height: 500px;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        
+        #qrcode {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #qrcode img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        #auth-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: #25D366;
+            text-align: center;
+            display: none;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        #loading-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: #808080;
+            text-align: center;
+            display: none;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .error {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: red;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            text-align: center;
+            max-width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-container">
+        <div id="error-message" class="error"></div>
+        
+        <div id="qrcode-container">
+            <div id="qrcode"></div>
+        </div>
+        
+        <div id="auth-message">
+            WhatsApp подключен успешно!
+        </div>
+        
+        <div id="loading-message">
+            Загрузка QR-кода...
+        </div>
+    </div>
+    
+    <script>
+        // Функция для отображения ошибки
+        function showError(message) {
+            var errorEl = document.getElementById('error-message');
+            errorEl.textContent = message;
+            errorEl.style.display = 'block';
+            console.error("Error:", message);
+        }
+        
+        // Функция для очистки ошибки
+        function clearError() {
+            var errorEl = document.getElementById('error-message');
+            errorEl.textContent = '';
+            errorEl.style.display = 'none';
+        }
+        
+        // Глобальный метод для вызова из внешней системы
+        window.displayQRCode = function(qrString, status) {
+            clearError();
+            console.log("displayQRCode called with status:", status);
+            
+            // Скрываем все контейнеры
+            document.getElementById('qrcode-container').style.display = 'none';
+            document.getElementById('auth-message').style.display = 'none';
+            document.getElementById('loading-message').style.display = 'none';
+            
+            // Проверяем статус
+            if (status === 'isauth' || status === 'connected') {
+                // Подключен, показываем сообщение об успешной авторизации
+                document.getElementById('auth-message').style.display = 'block';
+                return true;
+            }
+            
+            if (status === 'loading') {
+                // Загрузка, показываем сообщение о загрузке
+                document.getElementById('loading-message').style.display = 'block';
+            } else {
+                // Используем статус как строку QR-кода
+                var qrContainer = document.getElementById('qrcode');
+                qrContainer.innerHTML = '';
+                
+                try {
+                    // Пробуем использовать статус как строку QR-кода
+                    var img = document.createElement('img');
+                    img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=' + encodeURIComponent(status);
+                    qrContainer.appendChild(img);
+                    
+                    document.getElementById('qrcode-container').style.display = 'flex';
+                    console.log("Created QR code using status as QR string, length:", status.length);
+                } catch (error) {
+                    showError('Ошибка генерации QR-кода: ' + error.message);
+                    document.getElementById('loading-message').style.display = 'block';
+                }
+            }
+            
+            return true;
+        };
+        
+        // Инициализация при загрузке страницы
+        window.onload = function() {
+            console.log("Page loaded");
+            document.getElementById('loading-message').style.display = 'block';
+        };
+    </script>
+</body>
+</html>
