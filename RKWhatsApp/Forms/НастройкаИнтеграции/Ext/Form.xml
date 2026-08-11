@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="ПодсказкаДоступ" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес платформы и ключ API выдаёт портал RK WhatsApp, раздел «Доступ».</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>0</MaxWidth>
+		</LabelDecoration>
+		<LabelDecoration name="ПодсказкаКлюч" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ключ открывает все номера организации. Он хранится в настройках 1С и не показывается после ввода.</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>0</MaxWidth>
+		</LabelDecoration>
+		<InputField name="ПолеАдреса" id="3">
+			<DataPath>Объект.АдресПлатформы</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес платформы (например, https://rkwa.spherex.kz)</v8:content>
+				</v8:item>
+			</Title>
+			<TitleLocation>Top</TitleLocation>
+			<HorizontalStretch>true</HorizontalStretch>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>0</MaxWidth>
+		</InputField>
+		<InputField name="ПолеКлюча" id="4">
+			<DataPath>Объект.КлючAPI</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ключ API</v8:content>
+				</v8:item>
+			</Title>
+			<TitleLocation>Top</TitleLocation>
+			<HorizontalStretch>true</HorizontalStretch>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>0</MaxWidth>
+		</InputField>
+		<UsualGroup name="КнопкиПодключения" id="7">
+			<Group>Horizontal</Group>
+			<ChildItems>
+				<Button name="КнопкаСохранить" id="5">
+					<CommandName>Form.Command.Сохранить</CommandName>
+				</Button>
+				<Button name="КнопкаПроверитьСвязь" id="6">
+					<CommandName>Form.Command.ПроверитьСвязь</CommandName>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="ЗаголовокНомеров" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номера, подключённые к платформе:</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>0</MaxWidth>
+		</LabelDecoration>
+		<UsualGroup name="КнопкиНомеров" id="13">
+			<Group>Horizontal</Group>
+			<ChildItems>
+				<Button name="КнопкаОбновитьСписок" id="9">
+					<CommandName>Form.Command.ОбновитьСписок</CommandName>
+				</Button>
+				<Button name="КнопкаДобавитьНомер" id="10">
+					<CommandName>Form.Command.ДобавитьНомер</CommandName>
+				</Button>
+				<Button name="КнопкаОткрытьНомер" id="11">
+					<CommandName>Form.Command.ОткрытьНомер</CommandName>
+				</Button>
+				<Button name="КнопкаОткрытьПримеры" id="12">
+					<CommandName>Form.Command.ОткрытьПримеры</CommandName>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="Номера" id="14">
+			<AutoInsertNewRow>false</AutoInsertNewRow>
+			<DataPath>Объект.Номера</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<HorizontalStretch>true</HorizontalStretch>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>0</MaxWidth>
+			<VerticalStretch>true</VerticalStretch>
+			<ContextMenu name="НомераКонтекстноеМеню" id="15"/>
+			<AutoCommandBar name="НомераКоманднаяПанель" id="16"/>
+			<ExtendedTooltip name="НомераРасширеннаяПодсказка" id="17"/>
+			<SearchStringAddition name="НомераСтрокаПоиска" id="18">
+				<AdditionSource>
+					<Item>Номера</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="НомераСтрокаПоискаКонтекстноеМеню" id="19"/>
+				<ExtendedTooltip name="НомераСтрокаПоискаРасширеннаяПодсказка" id="20"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="НомераСостояниеПросмотра" id="21">
+				<AdditionSource>
+					<Item>Номера</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="НомераСостояниеПросмотраКонтекстноеМеню" id="22"/>
+				<ExtendedTooltip name="НомераСостояниеПросмотраРасширеннаяПодсказка" id="23"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="НомераУправлениеПоиском" id="24">
+				<AdditionSource>
+					<Item>Номера</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="НомераУправлениеПоискомКонтекстноеМеню" id="25"/>
+				<ExtendedTooltip name="НомераУправлениеПоискомРасширеннаяПодсказка" id="26"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<ColumnGroup name="НомераКолонки" id="27">
+					<ReadOnly>true</ReadOnly>
+					<ExtendedTooltip name="НомераКолонкиРасширеннаяПодсказка" id="28"/>
+					<ChildItems>
+						<InputField name="НомераНаименование" id="29">
+							<DataPath>Объект.Номера.Наименование</DataPath>
+							<ContextMenu name="НомераНаименованиеКонтекстноеМеню" id="30"/>
+							<ExtendedTooltip name="НомераНаименованиеРасширеннаяПодсказка" id="31"/>
+						</InputField>
+						<InputField name="НомераСтатус" id="32">
+							<DataPath>Объект.Номера.Статус</DataPath>
+							<ContextMenu name="НомераСтатусКонтекстноеМеню" id="33"/>
+							<ExtendedTooltip name="НомераСтатусРасширеннаяПодсказка" id="34"/>
+						</InputField>
+						<InputField name="НомераТелефон" id="35">
+							<DataPath>Объект.Номера.Телефон</DataPath>
+							<ContextMenu name="НомераТелефонКонтекстноеМеню" id="36"/>
+							<ExtendedTooltip name="НомераТелефонРасширеннаяПодсказка" id="37"/>
+						</InputField>
+						<InputField name="НомераПоследняяОшибка" id="38">
+							<DataPath>Объект.Номера.ПоследняяОшибка</DataPath>
+							<ContextMenu name="НомераПоследняяОшибкаКонтекстноеМеню" id="39"/>
+							<ExtendedTooltip name="НомераПоследняяОшибкаРасширеннаяПодсказка" id="40"/>
+						</InputField>
+						<InputField name="НомераИдентификатор" id="41">
+							<DataPath>Объект.Номера.Идентификатор</DataPath>
+							<ContextMenu name="НомераИдентификаторКонтекстноеМеню" id="42"/>
+							<ExtendedTooltip name="НомераИдентификаторРасширеннаяПодсказка" id="43"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+			</ChildItems>
+		</Table>
+		<LabelDecoration name="ЗаголовокСостояния" id="44">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Что произошло:</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>0</MaxWidth>
+		</LabelDecoration>
+		<InputField name="ПолеСостояния" id="45">
+			<DataPath>Состояние</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<MultiLine>true</MultiLine>
+			<ReadOnly>true</ReadOnly>
+			<VerticalStretch>false</VerticalStretch>
+			<Height>5</Height>
+			<HorizontalStretch>true</HorizontalStretch>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>0</MaxWidth>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="46">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.RKWhatsApp</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="Состояние" id="47">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Что произошло</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Сохранить" id="48">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройки</v8:content>
+				</v8:item>
+			</Title>
+			<Action>Сохранить</Action>
+		</Command>
+		<Command name="ПроверитьСвязь" id="49">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить связь</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ПроверитьСвязь</Action>
+		</Command>
+		<Command name="ОбновитьСписок" id="50">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить список</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОбновитьСписок</Action>
+		</Command>
+		<Command name="ДобавитьНомер" id="51">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить номер</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ДобавитьНомер</Action>
+		</Command>
+		<Command name="ОткрытьНомер" id="52">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть номер</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьНомер</Action>
+		</Command>
+		<Command name="ОткрытьПримеры" id="53">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Примеры</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьПримеры</Action>
+		</Command>
+	</Commands>
+</Form>

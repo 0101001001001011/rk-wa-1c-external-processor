@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Код для входа</title>
+<style>
+	html, body {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		font-family: Arial, sans-serif;
+		background: #f5f5f5;
+	}
+	.обёртка {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
+	.картинка {
+		background: #ffffff;
+		padding: 8px;
+		border: 1px solid #dddddd;
+	}
+	.картинка img {
+		display: block;
+		max-width: 320px;
+		max-height: 320px;
+	}
+	.подпись {
+		margin-top: 12px;
+		font-size: 14px;
+		color: #333333;
+		max-width: 360px;
+	}
+</style>
+</head>
+<body>
+<!--
+	Картинка приходит от платформы готовой, полем image ответа
+	GET /api/v2/instances/:id/qr, и подставляется сюда как data:-адрес.
+	Стороннего сервиса отрисовки здесь нет намеренно: строка кода — это
+	одноразовый пропуск к переписке, и отправлять её на чужой сайт ради
+	картинки значит отдавать доступ к чужим сообщениям.
+-->
+<div class="обёртка">
+	<div class="картинка">%КАРТИНКА%</div>
+	<div class="подпись">%ПОДПИСЬ%</div>
+</div>
+</body>
+</html>

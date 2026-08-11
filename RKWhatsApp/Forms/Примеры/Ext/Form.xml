@@ -1,0 +1,630 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="Вкладки" id="104">
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<HorizontalStretch>true</HorizontalStretch>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>0</MaxWidth>
+			<VerticalStretch>true</VerticalStretch>
+			<ChildItems>
+				<Page name="СтраницаОтправки" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отправка</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<HorizontalStretch>true</HorizontalStretch>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>0</MaxWidth>
+					<VerticalStretch>true</VerticalStretch>
+					<ChildItems>
+						<LabelDecoration name="ПодсказкаОтправки" id="1">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Номер получателя вводится в любом виде — обработка оставит от него только цифры.</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>0</MaxWidth>
+						</LabelDecoration>
+						<InputField name="ПолеПолучателя" id="2">
+							<DataPath>Получатель</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Кому (номер телефона)</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Top</TitleLocation>
+							<HorizontalStretch>true</HorizontalStretch>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>0</MaxWidth>
+						</InputField>
+						<InputField name="ПолеТекста" id="3">
+							<DataPath>Текст</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Текст сообщения</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Top</TitleLocation>
+							<MultiLine>true</MultiLine>
+							<VerticalStretch>false</VerticalStretch>
+							<Height>4</Height>
+							<HorizontalStretch>true</HorizontalStretch>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>0</MaxWidth>
+						</InputField>
+						<UsualGroup name="КнопкиТекста" id="5">
+							<Group>Horizontal</Group>
+							<ChildItems>
+								<Button name="КнопкаОтправитьТекст" id="4">
+									<CommandName>Form.Command.ОтправитьТекст</CommandName>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<LabelDecoration name="ПодсказкаФайла" id="6">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Файл платформа забирает по ссылке сама, поэтому ссылка должна открываться и с её стороны, а не только у вас.</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>0</MaxWidth>
+						</LabelDecoration>
+						<InputField name="ПолеСсылки" id="7">
+							<DataPath>Ссылка</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ссылка на файл</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Top</TitleLocation>
+							<HorizontalStretch>true</HorizontalStretch>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>0</MaxWidth>
+						</InputField>
+						<InputField name="ПолеИмениФайла" id="8">
+							<DataPath>ИмяФайла</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Имя файла — его увидит получатель</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Top</TitleLocation>
+							<HorizontalStretch>true</HorizontalStretch>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>0</MaxWidth>
+						</InputField>
+						<InputField name="ПолеПодписи" id="9">
+							<DataPath>Подпись</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Подпись к файлу (необязательно)</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Top</TitleLocation>
+							<HorizontalStretch>true</HorizontalStretch>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>0</MaxWidth>
+						</InputField>
+						<InputField name="ПолеВидаФайла" id="10">
+							<DataPath>ВидФайла</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Как показать: document, image или video</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Top</TitleLocation>
+							<HorizontalStretch>true</HorizontalStretch>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>0</MaxWidth>
+						</InputField>
+						<UsualGroup name="КнопкиФайла" id="12">
+							<Group>Horizontal</Group>
+							<ChildItems>
+								<Button name="КнопкаОтправитьФайл" id="11">
+									<CommandName>Form.Command.ОтправитьФайл</CommandName>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаПереписки" id="72">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Переписка</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<HorizontalStretch>true</HorizontalStretch>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>0</MaxWidth>
+					<VerticalStretch>true</VerticalStretch>
+					<ChildItems>
+						<LabelDecoration name="ПодсказкаПереписки" id="14">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выберите переписку и нажмите «Показать сообщения».</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>0</MaxWidth>
+						</LabelDecoration>
+						<UsualGroup name="КнопкиПереписки" id="17">
+							<Group>Horizontal</Group>
+							<ChildItems>
+								<Button name="КнопкаОбновитьПереписки" id="15">
+									<CommandName>Form.Command.ОбновитьПереписки</CommandName>
+								</Button>
+								<Button name="КнопкаПоказатьСообщения" id="16">
+									<CommandName>Form.Command.ПоказатьСообщения</CommandName>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="Переписки" id="18">
+							<AutoInsertNewRow>false</AutoInsertNewRow>
+							<DataPath>Объект.Переписки</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<HorizontalStretch>true</HorizontalStretch>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>0</MaxWidth>
+							<VerticalStretch>false</VerticalStretch>
+							<Height>8</Height>
+							<ContextMenu name="ПерепискиКонтекстноеМеню" id="19"/>
+							<AutoCommandBar name="ПерепискиКоманднаяПанель" id="20"/>
+							<ExtendedTooltip name="ПерепискиРасширеннаяПодсказка" id="21"/>
+							<SearchStringAddition name="ПерепискиСтрокаПоиска" id="22">
+								<AdditionSource>
+									<Item>Переписки</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПерепискиСтрокаПоискаКонтекстноеМеню" id="23"/>
+								<ExtendedTooltip name="ПерепискиСтрокаПоискаРасширеннаяПодсказка" id="24"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПерепискиСостояниеПросмотра" id="25">
+								<AdditionSource>
+									<Item>Переписки</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПерепискиСостояниеПросмотраКонтекстноеМеню" id="26"/>
+								<ExtendedTooltip name="ПерепискиСостояниеПросмотраРасширеннаяПодсказка" id="27"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПерепискиУправлениеПоиском" id="28">
+								<AdditionSource>
+									<Item>Переписки</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПерепискиУправлениеПоискомКонтекстноеМеню" id="29"/>
+								<ExtendedTooltip name="ПерепискиУправлениеПоискомРасширеннаяПодсказка" id="30"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<ColumnGroup name="ПерепискиКолонки" id="31">
+									<ReadOnly>true</ReadOnly>
+									<ExtendedTooltip name="ПерепискиКолонкиРасширеннаяПодсказка" id="32"/>
+									<ChildItems>
+										<InputField name="ПерепискиЗаголовок" id="33">
+											<DataPath>Объект.Переписки.Заголовок</DataPath>
+											<ContextMenu name="ПерепискиЗаголовокКонтекстноеМеню" id="34"/>
+											<ExtendedTooltip name="ПерепискиЗаголовокРасширеннаяПодсказка" id="35"/>
+										</InputField>
+										<InputField name="ПерепискиЭтоГруппа" id="36">
+											<DataPath>Объект.Переписки.ЭтоГруппа</DataPath>
+											<ContextMenu name="ПерепискиЭтоГруппаКонтекстноеМеню" id="37"/>
+											<ExtendedTooltip name="ПерепискиЭтоГруппаРасширеннаяПодсказка" id="38"/>
+										</InputField>
+										<InputField name="ПерепискиОбновлена" id="39">
+											<DataPath>Объект.Переписки.Обновлена</DataPath>
+											<ContextMenu name="ПерепискиОбновленаКонтекстноеМеню" id="40"/>
+											<ExtendedTooltip name="ПерепискиОбновленаРасширеннаяПодсказка" id="41"/>
+										</InputField>
+										<InputField name="ПерепискиИдентификатор" id="42">
+											<DataPath>Объект.Переписки.Идентификатор</DataPath>
+											<ContextMenu name="ПерепискиИдентификаторКонтекстноеМеню" id="43"/>
+											<ExtendedTooltip name="ПерепискиИдентификаторРасширеннаяПодсказка" id="44"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+							</ChildItems>
+						</Table>
+						<Table name="Сообщения" id="45">
+							<AutoInsertNewRow>false</AutoInsertNewRow>
+							<DataPath>Объект.Сообщения</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<HorizontalStretch>true</HorizontalStretch>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>0</MaxWidth>
+							<VerticalStretch>true</VerticalStretch>
+							<ContextMenu name="СообщенияКонтекстноеМеню" id="46"/>
+							<AutoCommandBar name="СообщенияКоманднаяПанель" id="47"/>
+							<ExtendedTooltip name="СообщенияРасширеннаяПодсказка" id="48"/>
+							<SearchStringAddition name="СообщенияСтрокаПоиска" id="49">
+								<AdditionSource>
+									<Item>Сообщения</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СообщенияСтрокаПоискаКонтекстноеМеню" id="50"/>
+								<ExtendedTooltip name="СообщенияСтрокаПоискаРасширеннаяПодсказка" id="51"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СообщенияСостояниеПросмотра" id="52">
+								<AdditionSource>
+									<Item>Сообщения</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СообщенияСостояниеПросмотраКонтекстноеМеню" id="53"/>
+								<ExtendedTooltip name="СообщенияСостояниеПросмотраРасширеннаяПодсказка" id="54"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СообщенияУправлениеПоиском" id="55">
+								<AdditionSource>
+									<Item>Сообщения</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СообщенияУправлениеПоискомКонтекстноеМеню" id="56"/>
+								<ExtendedTooltip name="СообщенияУправлениеПоискомРасширеннаяПодсказка" id="57"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<ColumnGroup name="СообщенияКолонки" id="58">
+									<ReadOnly>true</ReadOnly>
+									<ExtendedTooltip name="СообщенияКолонкиРасширеннаяПодсказка" id="59"/>
+									<ChildItems>
+										<InputField name="СообщенияВремя" id="60">
+											<DataPath>Объект.Сообщения.Время</DataPath>
+											<ContextMenu name="СообщенияВремяКонтекстноеМеню" id="61"/>
+											<ExtendedTooltip name="СообщенияВремяРасширеннаяПодсказка" id="62"/>
+										</InputField>
+										<InputField name="СообщенияНаправление" id="63">
+											<DataPath>Объект.Сообщения.Направление</DataPath>
+											<ContextMenu name="СообщенияНаправлениеКонтекстноеМеню" id="64"/>
+											<ExtendedTooltip name="СообщенияНаправлениеРасширеннаяПодсказка" id="65"/>
+										</InputField>
+										<InputField name="СообщенияТекст" id="66">
+											<DataPath>Объект.Сообщения.Текст</DataPath>
+											<ContextMenu name="СообщенияТекстКонтекстноеМеню" id="67"/>
+											<ExtendedTooltip name="СообщенияТекстРасширеннаяПодсказка" id="68"/>
+										</InputField>
+										<InputField name="СообщенияСтатус" id="69">
+											<DataPath>Объект.Сообщения.Статус</DataPath>
+											<ContextMenu name="СообщенияСтатусКонтекстноеМеню" id="70"/>
+											<ExtendedTooltip name="СообщенияСтатусРасширеннаяПодсказка" id="71"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаКонтактов" id="103">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Контакты</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<HorizontalStretch>true</HorizontalStretch>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>0</MaxWidth>
+					<VerticalStretch>true</VerticalStretch>
+					<ChildItems>
+						<LabelDecoration name="ПодсказкаКонтактов" id="73">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Контакты собираются платформой из переписки этого номера.</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>0</MaxWidth>
+						</LabelDecoration>
+						<UsualGroup name="КнопкиКонтактов" id="75">
+							<Group>Horizontal</Group>
+							<ChildItems>
+								<Button name="КнопкаОбновитьКонтакты" id="74">
+									<CommandName>Form.Command.ОбновитьКонтакты</CommandName>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="Контакты" id="76">
+							<AutoInsertNewRow>false</AutoInsertNewRow>
+							<DataPath>Объект.Контакты</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<HorizontalStretch>true</HorizontalStretch>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>0</MaxWidth>
+							<VerticalStretch>true</VerticalStretch>
+							<ContextMenu name="КонтактыКонтекстноеМеню" id="77"/>
+							<AutoCommandBar name="КонтактыКоманднаяПанель" id="78"/>
+							<ExtendedTooltip name="КонтактыРасширеннаяПодсказка" id="79"/>
+							<SearchStringAddition name="КонтактыСтрокаПоиска" id="80">
+								<AdditionSource>
+									<Item>Контакты</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="КонтактыСтрокаПоискаКонтекстноеМеню" id="81"/>
+								<ExtendedTooltip name="КонтактыСтрокаПоискаРасширеннаяПодсказка" id="82"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="КонтактыСостояниеПросмотра" id="83">
+								<AdditionSource>
+									<Item>Контакты</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="КонтактыСостояниеПросмотраКонтекстноеМеню" id="84"/>
+								<ExtendedTooltip name="КонтактыСостояниеПросмотраРасширеннаяПодсказка" id="85"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="КонтактыУправлениеПоиском" id="86">
+								<AdditionSource>
+									<Item>Контакты</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="КонтактыУправлениеПоискомКонтекстноеМеню" id="87"/>
+								<ExtendedTooltip name="КонтактыУправлениеПоискомРасширеннаяПодсказка" id="88"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<ColumnGroup name="КонтактыКолонки" id="89">
+									<ReadOnly>true</ReadOnly>
+									<ExtendedTooltip name="КонтактыКолонкиРасширеннаяПодсказка" id="90"/>
+									<ChildItems>
+										<InputField name="КонтактыИмя" id="91">
+											<DataPath>Объект.Контакты.Имя</DataPath>
+											<ContextMenu name="КонтактыИмяКонтекстноеМеню" id="92"/>
+											<ExtendedTooltip name="КонтактыИмяРасширеннаяПодсказка" id="93"/>
+										</InputField>
+										<InputField name="КонтактыТелефон" id="94">
+											<DataPath>Объект.Контакты.Телефон</DataPath>
+											<ContextMenu name="КонтактыТелефонКонтекстноеМеню" id="95"/>
+											<ExtendedTooltip name="КонтактыТелефонРасширеннаяПодсказка" id="96"/>
+										</InputField>
+										<InputField name="КонтактыИсточник" id="97">
+											<DataPath>Объект.Контакты.Источник</DataPath>
+											<ContextMenu name="КонтактыИсточникКонтекстноеМеню" id="98"/>
+											<ExtendedTooltip name="КонтактыИсточникРасширеннаяПодсказка" id="99"/>
+										</InputField>
+										<InputField name="КонтактыИдентификатор" id="100">
+											<DataPath>Объект.Контакты.Идентификатор</DataPath>
+											<ContextMenu name="КонтактыИдентификаторКонтекстноеМеню" id="101"/>
+											<ExtendedTooltip name="КонтактыИдентификаторРасширеннаяПодсказка" id="102"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<LabelDecoration name="ЗаголовокСостояния" id="105">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Что произошло:</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>0</MaxWidth>
+		</LabelDecoration>
+		<InputField name="ПолеСостояния" id="106">
+			<DataPath>Состояние</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<MultiLine>true</MultiLine>
+			<ReadOnly>true</ReadOnly>
+			<VerticalStretch>false</VerticalStretch>
+			<Height>4</Height>
+			<HorizontalStretch>true</HorizontalStretch>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>0</MaxWidth>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="107">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.RKWhatsApp</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ИдНомера" id="108">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор номера</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдПереписки" id="109">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор переписки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Получатель" id="110">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кому</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>50</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Текст" id="111">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст сообщения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Ссылка" id="112">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ссылка на файл</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>500</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИмяФайла" id="113">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Имя файла</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>200</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Подпись" id="114">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подпись к файлу</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>500</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВидФайла" id="115">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид файла</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Состояние" id="116">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Что произошло</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОтправитьТекст" id="117">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить текст</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОтправитьТекст</Action>
+		</Command>
+		<Command name="ОтправитьФайл" id="118">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить файл</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОтправитьФайл</Action>
+		</Command>
+		<Command name="ОбновитьПереписки" id="119">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить переписки</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОбновитьПереписки</Action>
+		</Command>
+		<Command name="ПоказатьСообщения" id="120">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать сообщения</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ПоказатьСообщения</Action>
+		</Command>
+		<Command name="ОбновитьКонтакты" id="121">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить контакты</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОбновитьКонтакты</Action>
+		</Command>
+	</Commands>
+</Form>
