@@ -221,6 +221,7 @@
 							</SearchControlAddition>
 							<ChildItems>
 								<ColumnGroup name="ПерепискиКолонки" id="31">
+									<Group>Horizontal</Group>
 									<ReadOnly>true</ReadOnly>
 									<ExtendedTooltip name="ПерепискиКолонкиРасширеннаяПодсказка" id="32"/>
 									<ChildItems>
@@ -285,6 +286,7 @@
 							</SearchControlAddition>
 							<ChildItems>
 								<ColumnGroup name="СообщенияКолонки" id="58">
+									<Group>Horizontal</Group>
 									<ReadOnly>true</ReadOnly>
 									<ExtendedTooltip name="СообщенияКолонкиРасширеннаяПодсказка" id="59"/>
 									<ChildItems>
@@ -383,6 +385,7 @@
 							</SearchControlAddition>
 							<ChildItems>
 								<ColumnGroup name="КонтактыКолонки" id="89">
+									<Group>Horizontal</Group>
 									<ReadOnly>true</ReadOnly>
 									<ExtendedTooltip name="КонтактыКолонкиРасширеннаяПодсказка" id="90"/>
 									<ChildItems>

@@ -131,6 +131,7 @@
 			</SearchControlAddition>
 			<ChildItems>
 				<ColumnGroup name="НомераКолонки" id="27">
+					<Group>Horizontal</Group>
 					<ReadOnly>true</ReadOnly>
 					<ExtendedTooltip name="НомераКолонкиРасширеннаяПодсказка" id="28"/>
 					<ChildItems>
