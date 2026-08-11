@@ -220,7 +220,7 @@ $env:RKWA_1CV8 = 'C:\Program Files\1cv8\8.3.23.2236\bin\1cv8.exe'
 
 # 2. Положить строку подключения в C:\Temp\rkwa\conn.txt, например:
 #    /F"C:\Temp\rkwa\ib"                 — файловая база
-#    /S"localhost\umc_dev2" /N"..." /P"..." — серверная
+#    /S"localhost\имя-базы" /N"..." /P"..." — серверная
 
 powershell -ExecutionPolicy Bypass -File scripts\build-epf.ps1
 powershell -ExecutionPolicy Bypass -File scripts\check-modules.ps1

@@ -35,7 +35,7 @@ trap {
 # ни коммитить, ни передавать аргументом (аргументы видны в списке
 # процессов всем, кто на машине).
 $conn = Get-Content (Join-Path $Work 'conn.txt') -Raw -Encoding UTF8
-$conn = $conn.Trim()   # строка вида /S"localhost\umc_dev2" /N"..." /P"..."
+$conn = $conn.Trim()   # строка вида /S"localhost\имя-базы" /N"..." /P"..."
 W ("строка подключения прочитана, длина " + $conn.Length)
 
 Remove-Item $Out, $Log -ErrorAction SilentlyContinue
