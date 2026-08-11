@@ -27,7 +27,7 @@ WhatsApp, отправляет сообщения и файлы, читает п
 
 1. В портале RK WhatsApp, раздел **«Доступ»**, выпустите ключ API.
 2. Откройте `RKWhatsApp.epf` в 1С.
-3. Введите адрес платформы (например, `https://rkwa.spherex.kz`) и ключ.
+3. Введите адрес платформы (например, `https://rkwa.example.com`) и ключ.
 4. Нажмите **«Сохранить настройки»**, затем **«Проверить связь»** —
    появится список номеров.
 5. Чтобы подключить номер: **«Добавить номер»** → откройте его →
@@ -76,11 +76,16 @@ WhatsApp, отправляет сообщения и файлы, читает п
 первой команды. В PowerShell пишите `curl.exe`: `curl` там — псевдоним
 `Invoke-WebRequest` с другими ключами.
 
+`rkwa.example.com` в командах — вымышленный узел. Адрес нашей установки
+для разработки лежит в `.secrets` рядом с репозиторием (`RKWA_API_URL`),
+а не здесь: обработка идёт приложением к публичной статье, и имя узла
+вместе с почтой администратора — половина пары «куда и под кем».
+
 **1. Список номеров.** Заодно проверяет, что ключ принят и что
 `X-API-Key` поддержан.
 
 ```
-curl -s -H "X-API-Key: КЛЮЧ" https://rkwa.spherex.kz/api/v2/instances
+curl -s -H "X-API-Key: КЛЮЧ" https://rkwa.example.com/api/v2/instances
 ```
 
 Ответ: `{"items":[{"id":"…","name":"…","status":"connected",…}],"nextCursor":null}`.
@@ -104,7 +109,7 @@ curl отправляет его байтами как есть, и русски
 
 ```
 curl -s -X POST -H "X-API-Key: КЛЮЧ" -H "Content-Type: application/json" ^
-  -d @текст.json https://rkwa.spherex.kz/api/v2/instances/ИД-НОМЕРА/messages
+  -d @текст.json https://rkwa.example.com/api/v2/instances/ИД-НОМЕРА/messages
 ```
 
 Ответ: `202 {"messageId":"…","providerMessageId":"…"}`. Код 202, а не 201:
@@ -133,7 +138,7 @@ curl -s -X POST -H "X-API-Key: КЛЮЧ" -H "Content-Type: application/json" ^
 
 ```
 curl -s -X POST -H "X-API-Key: КЛЮЧ" -H "Content-Type: application/json" ^
-  -d @файл.json https://rkwa.spherex.kz/api/v2/instances/ИД-НОМЕРА/messages
+  -d @файл.json https://rkwa.example.com/api/v2/instances/ИД-НОМЕРА/messages
 ```
 
 `as` — `document`, `image` или `video`: это про то, как файл покажется
