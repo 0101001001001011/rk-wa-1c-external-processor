@@ -191,7 +191,7 @@
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<MaxWidth>0</MaxWidth>
 							<VerticalStretch>false</VerticalStretch>
-							<Height>8</Height>
+							<Height>6</Height>
 							<ContextMenu name="ПерепискиКонтекстноеМеню" id="19"/>
 							<AutoCommandBar name="ПерепискиКоманднаяПанель" id="20"/>
 							<ExtendedTooltip name="ПерепискиРасширеннаяПодсказка" id="21"/>
@@ -434,7 +434,7 @@
 			<MultiLine>true</MultiLine>
 			<ReadOnly>true</ReadOnly>
 			<VerticalStretch>false</VerticalStretch>
-			<Height>4</Height>
+			<Height>3</Height>
 			<HorizontalStretch>true</HorizontalStretch>
 			<AutoMaxWidth>false</AutoMaxWidth>
 			<MaxWidth>0</MaxWidth>

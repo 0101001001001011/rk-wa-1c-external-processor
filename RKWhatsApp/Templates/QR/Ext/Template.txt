@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Код для входа</title>
 <style>
 	html, body {
@@ -10,27 +11,44 @@
 		padding: 0;
 		font-family: Arial, sans-serif;
 		background: #f5f5f5;
+		overflow: hidden;
 	}
 	.обёртка {
+		box-sizing: border-box;
 		height: 100%;
+		padding: 8px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		text-align: center;
 	}
+	/*
+		Картинка ужимается под высоту поля, а не наоборот. Поле растягивается
+		вместе с формой, и при картинке в фиксированные 320 точек код на
+		невысоком экране обрезался снизу: отсканировать его было нельзя, пока
+		человек не догадается прокрутить.
+	*/
 	.картинка {
+		flex: 1 1 0%;
+		min-height: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		background: #ffffff;
 		padding: 8px;
 		border: 1px solid #dddddd;
 	}
 	.картинка img {
 		display: block;
+		width: auto;
+		height: auto;
 		max-width: 320px;
-		max-height: 320px;
+		max-height: 100%;
 	}
 	.подпись {
-		margin-top: 12px;
+		flex: 0 0 auto;
+		margin-top: 10px;
 		font-size: 14px;
 		color: #333333;
 		max-width: 360px;
